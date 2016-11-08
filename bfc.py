@@ -1,3 +1,4 @@
+# Brainfuck Cleaning Module - gets rid of most forms of comments
 symbols = ["<",">","+","-","[","]",",","."]
 cleanedChars = []
 
