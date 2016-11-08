@@ -1,0 +1,5 @@
+*.pyc
+*.py
+!bf2p.py
+!pymod.py
+!bfc.py
