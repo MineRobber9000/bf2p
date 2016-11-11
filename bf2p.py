@@ -35,8 +35,6 @@ charDict = {
 
 indented = 0
 for char in code:
-#	if char == "[":
-#		indented += 1
 	if char == "]":
 		indented -= 1
 	for line in charDict[char]:
