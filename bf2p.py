@@ -19,18 +19,19 @@ mod = pymod.Program()
 
 mod.addImport("print_function",True)
 mod.addImport("sys",False)
+mod.addLine("from collections import defaultdict")
 mod.addLine("dp = 0")
-mod.addLine("mem = {}")
+mod.addLine("mem = defaultdict(int)")
 
 charDict = {
 	">": ["dp += 1"],
 	"<": ["dp -= 1"],
-	"+": ["if not dp in mem:","\tmem[dp] = 0","mem[dp] += 1"],
-	"-": ["if not dp in mem:","\tmem[dp] = 0","mem[dp] -= 1"],
+	"+": ["mem[dp] += 1"],
+	"-": ["mem[dp] -= 1"],
 	"[": ["while mem[dp] != 0:"],
 	"]": [], #nothing needs to be done here.
-	",": ["if not dp in mem:","\tmem[dp] = 0","mem[dp] = ord(raw_input()[0])"],
-	".": ["if not dp in mem:","\tmem[dp] = 0","print(chr(mem[dp]),end='')"]
+	",": ["mem[dp] = ord(raw_input()[0])"],
+	".": ["sys.stdout.write(chr(mem[dp]))"]
 }
 
 indented = 0
